@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarAuthors">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarAuthorsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEmployee">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarEmployeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarTitleauthor">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarTitleauthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarTitleauthorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAuthors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="au_lname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="au_fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zip" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarAuthorsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="job_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="job_lvl" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pub_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hire_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarTitleauthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="au_ord" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="royaltyper" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarTitleauthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarTitleauthorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAuthors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarAuthorsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarTitleauthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarTitleauthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarTitleauthorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAuthors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAuthorsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarEmployeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarTitleauthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarTitleauthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarTitleauthorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAuthors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="au_lname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="au_fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zip" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarAuthorsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="job_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="job_lvl" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pub_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hire_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTitleauthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="au_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="au_ord" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="royaltyper" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTitleauthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarTitleauthorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarAuthors" />
+  </wsdl:message>
+  <wsdl:message name="ListarAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ListarEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarTitleauthorSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarTitleauthor" />
+  </wsdl:message>
+  <wsdl:message name="ListarTitleauthorSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarTitleauthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAuthors" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarTitleauthorSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarTitleauthor" />
+  </wsdl:message>
+  <wsdl:message name="AgregarTitleauthorSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarTitleauthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAuthors" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarEmployee" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTitleauthorSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarTitleauthor" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTitleauthorSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarTitleauthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAuthors" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarEmployee" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarTitleauthorSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarTitleauthor" />
+  </wsdl:message>
+  <wsdl:message name="BuscarTitleauthorSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarTitleauthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAuthors" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTitleauthorSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTitleauthor" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTitleauthorSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTitleauthorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="ListarAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar la tabla authors</wsdl:documentation>
+      <wsdl:input message="tns:ListarAuthorsSoapIn" />
+      <wsdl:output message="tns:ListarAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar la tabla employee</wsdl:documentation>
+      <wsdl:input message="tns:ListarEmployeeSoapIn" />
+      <wsdl:output message="tns:ListarEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTitleauthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar la tabla titleauthor</wsdl:documentation>
+      <wsdl:input message="tns:ListarTitleauthorSoapIn" />
+      <wsdl:output message="tns:ListarTitleauthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar un registro a la tabla authors</wsdl:documentation>
+      <wsdl:input message="tns:AgregarAuthorsSoapIn" />
+      <wsdl:output message="tns:AgregarAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar un registro a la tabla employee</wsdl:documentation>
+      <wsdl:input message="tns:AgregarEmployeeSoapIn" />
+      <wsdl:output message="tns:AgregarEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTitleauthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar un registro a la tabla titleauthor</wsdl:documentation>
+      <wsdl:input message="tns:AgregarTitleauthorSoapIn" />
+      <wsdl:output message="tns:AgregarTitleauthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar un authors</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAuthorsSoapIn" />
+      <wsdl:output message="tns:EliminarAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar un employee</wsdl:documentation>
+      <wsdl:input message="tns:EliminarEmployeeSoapIn" />
+      <wsdl:output message="tns:EliminarEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTitleauthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar un titleauthor</wsdl:documentation>
+      <wsdl:input message="tns:EliminarTitleauthorSoapIn" />
+      <wsdl:output message="tns:EliminarTitleauthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar en la tabla authors</wsdl:documentation>
+      <wsdl:input message="tns:BuscarAuthorsSoapIn" />
+      <wsdl:output message="tns:BuscarAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar en la tabla employee</wsdl:documentation>
+      <wsdl:input message="tns:BuscarEmployeeSoapIn" />
+      <wsdl:output message="tns:BuscarEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTitleauthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar en la tabla titleauthor</wsdl:documentation>
+      <wsdl:input message="tns:BuscarTitleauthorSoapIn" />
+      <wsdl:output message="tns:BuscarTitleauthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar en la tabla authors y actualizar los datos</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarAuthorsSoapIn" />
+      <wsdl:output message="tns:ActualizarAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar en la tabla authors y actualizar los datos</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarEmployeeSoapIn" />
+      <wsdl:output message="tns:ActualizarEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTitleauthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar en la tabla titleauthor y actualizar los datos</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarTitleauthorSoapIn" />
+      <wsdl:output message="tns:ActualizarTitleauthorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarAuthors">
+      <soap:operation soapAction="http://tempuri.org/ListarAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmployee">
+      <soap:operation soapAction="http://tempuri.org/ListarEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTitleauthor">
+      <soap:operation soapAction="http://tempuri.org/ListarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAuthors">
+      <soap:operation soapAction="http://tempuri.org/AgregarAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmployee">
+      <soap:operation soapAction="http://tempuri.org/AgregarEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTitleauthor">
+      <soap:operation soapAction="http://tempuri.org/AgregarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuthors">
+      <soap:operation soapAction="http://tempuri.org/EliminarAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmployee">
+      <soap:operation soapAction="http://tempuri.org/EliminarEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTitleauthor">
+      <soap:operation soapAction="http://tempuri.org/EliminarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAuthors">
+      <soap:operation soapAction="http://tempuri.org/BuscarAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmployee">
+      <soap:operation soapAction="http://tempuri.org/BuscarEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTitleauthor">
+      <soap:operation soapAction="http://tempuri.org/BuscarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAuthors">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmployee">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTitleauthor">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarAuthors">
+      <soap12:operation soapAction="http://tempuri.org/ListarAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmployee">
+      <soap12:operation soapAction="http://tempuri.org/ListarEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTitleauthor">
+      <soap12:operation soapAction="http://tempuri.org/ListarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAuthors">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmployee">
+      <soap12:operation soapAction="http://tempuri.org/AgregarEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTitleauthor">
+      <soap12:operation soapAction="http://tempuri.org/AgregarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuthors">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmployee">
+      <soap12:operation soapAction="http://tempuri.org/EliminarEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTitleauthor">
+      <soap12:operation soapAction="http://tempuri.org/EliminarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAuthors">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmployee">
+      <soap12:operation soapAction="http://tempuri.org/BuscarEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTitleauthor">
+      <soap12:operation soapAction="http://tempuri.org/BuscarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAuthors">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmployee">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTitleauthor">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTitleauthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://www.examennorthwind.somee.com/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://www.examennorthwind.somee.com/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
